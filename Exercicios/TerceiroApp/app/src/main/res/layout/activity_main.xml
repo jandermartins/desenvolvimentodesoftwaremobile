@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etQtdRefri"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <EditText
+        android:id="@+id/etPrecoRefri"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <EditText
+        android:id="@+id/etQtdHamb"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="232dp" />
+
+    <EditText
+        android:id="@+id/etQtdPizza"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/etPrecoHamb"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="232dp" />
+
+    <CheckBox
+        android:id="@+id/cbPizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="84dp"
+        android:text="Pizza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbHamb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="1dp"
+        android:text="Hamburguer"
+        app:layout_constraintEnd_toEndOf="@+id/cbRefri"
+        app:layout_constraintTop_toBottomOf="@+id/cbRefri" />
+
+    <CheckBox
+        android:id="@+id/cbRefri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Refrigerante"
+        app:layout_constraintStart_toStartOf="@+id/cbPizza"
+        app:layout_constraintTop_toBottomOf="@+id/cbPizza" />
+
+    <Button
+        android:id="@+id/btCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="105dp"
+        android:text="Calcular"
+        app:layout_constraintStart_toStartOf="@+id/cbHamb"
+        app:layout_constraintTop_toBottomOf="@+id/cbHamb" />
+
+    <EditText
+        android:id="@+id/etPrecoPizza"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
