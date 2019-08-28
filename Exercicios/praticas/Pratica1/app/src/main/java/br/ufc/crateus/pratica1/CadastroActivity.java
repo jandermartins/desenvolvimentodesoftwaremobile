@@ -57,7 +57,7 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://almada-mobile.herokuapp.com/api/users/add" + "?nome" + etNome.getText().toString() + "&email" + etEmail.getText().toString() + "&profissao" + profissao.toString() + "&idade" + etIdade.getText().toString() + "&genero" + etGenero.getText().toString()));
+                intent.setData(Uri.parse("https://almada-mobile.herokuapp.com/api/users/add/" + "?nome=" + etNome.getText().toString() + "&email=" + etEmail.getText().toString() + "&profissao=" + profissao.toString() + "&idade=" + etIdade.getText().toString() + "&genero=" + etGenero.getText().toString() + "&opcao=" + cbConcordo.getText().toString() ));
                 startActivity(intent);
             }
         });
