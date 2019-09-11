@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = (RecyclerView) findViewById(R.id.rv);
-        LinearLayoutManager layoutManager = new LinearLayoutManager( this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        lineAdapter = new LineAdapter( new ArrayList( 0));
+        lineAdapter = new LineAdapter(new ArrayList(0));
         recyclerView.setAdapter(lineAdapter);
 
 
@@ -87,13 +88,11 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(nome);
             if (nome != null) {
                 p.hide();
-                showDialog(Integer.parseInt(nome));
-
+                Toast.makeText(MainActivity.this, nome, Toast.LENGTH_SHORT).show();
             } else {
                 p.show();
             }
         }
-
     }
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
