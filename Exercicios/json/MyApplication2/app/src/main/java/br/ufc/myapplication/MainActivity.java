@@ -36,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        recyclerView = (RecyclerView) findViewById(R.id.rv);
+        LinearLayoutManager layoutManager = new LinearLayoutManager( this);
+        recyclerView.setLayoutManager(layoutManager);
+        lineAdapter = new LineAdapter( new ArrayList( 0));
+        recyclerView.setAdapter(lineAdapter);
+
+
         btImage = (Button) findViewById(R.id.btJson);
         recyclerView = (RecyclerView) findViewById(R.id.rv);
 
@@ -80,9 +87,8 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(nome);
             if (nome != null) {
                 p.hide();
-                recyclerView = (RecyclerView) findViewById(R.id.rv);
-                lineAdapter = new LineAdapter(new ArrayList(0));
-                recyclerView.setAdapter(lineAdapter);
+                showDialog(Integer.parseInt(nome));
+
             } else {
                 p.show();
             }
