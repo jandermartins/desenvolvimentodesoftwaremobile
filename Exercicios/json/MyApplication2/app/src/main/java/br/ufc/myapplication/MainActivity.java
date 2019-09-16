@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject json = jsonArray.getJSONObject(i);
                         UserModel user = new UserModel();
                         user.setName(json.getString("name"));
+                        user.setEmail(json.getString("email"));
                         lineAdapter.insertItem(user);
                     }
                 } catch (JSONException e) {

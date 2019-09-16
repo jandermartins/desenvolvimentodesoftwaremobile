@@ -28,6 +28,9 @@ public class LineAdapter extends RecyclerView.Adapter<LineHolder> {
         holder.title.setText(String.format(Locale.getDefault(), "%s",
                 mUsers.get(position).getName()
         ));
+        holder.title2.setText(String.format(Locale.getDefault(), "%s",
+                mUsers.get(position).getEmail()
+        ));
     }
 
     @Override
