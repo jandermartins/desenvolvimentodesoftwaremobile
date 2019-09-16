@@ -25,7 +25,7 @@ public class LineAdapter extends RecyclerView.Adapter<LineHolder> {
 
     @Override
     public void onBindViewHolder(LineHolder holder, int position) {
-        holder.title.setText(String.format(Locale.getDefault(), "%s, %d - %s",
+        holder.title.setText(String.format(Locale.getDefault(), "%s",
                 mUsers.get(position).getName()
         ));
     }

@@ -1,19 +1,20 @@
 package br.ufc.myapplication;
 
 import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private String nome;
     RecyclerView recyclerView;
     private LineAdapter lineAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,11 +87,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String nome) {
-            super.onPostExecute(nome);
-            if (nome != null) {
-                p.hide();
-                Toast.makeText(MainActivity.this, nome, Toast.LENGTH_SHORT).show();
+        protected void onPostExecute(String name) {
+            super.onPostExecute(name);
+            if (name != null) {
+                try {
+                    JSONArray jsonArray = new JSONArray(name);
+                    p.hide();
+                    for(int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject json = jsonArray.getJSONObject(i);
+                        UserModel user = new UserModel();
+                        user.setName(json.getString("name"));
+                        lineAdapter.insertItem(user);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             } else {
                 p.show();
             }
