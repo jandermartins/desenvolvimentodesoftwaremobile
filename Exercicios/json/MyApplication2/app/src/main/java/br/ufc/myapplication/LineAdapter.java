@@ -26,7 +26,14 @@ public class LineAdapter extends RecyclerView.Adapter<LineHolder> {
     @Override
     public void onBindViewHolder(LineHolder holder, int position) {
         holder.title.setText(String.format(Locale.getDefault(), "%s",
+<<<<<<< HEAD
                 mUsers.get(position)
+=======
+                mUsers.get(position).getName()
+>>>>>>> 1971c2bcd6ecb87fbba3253c8a53a4442d027ccd
+        ));
+        holder.title2.setText(String.format(Locale.getDefault(), "%s",
+                mUsers.get(position).getEmail()
         ));
     }
 

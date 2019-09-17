@@ -5,6 +5,15 @@ public class UserModel {
     private String name;
     private int age;
     private String city;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getName() {
         return name;
