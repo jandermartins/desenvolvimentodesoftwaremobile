@@ -21,12 +21,12 @@ public class Socket {
 
 				
 				
-				Scanner scan = new Scanner(System.in);
+//				Scanner scan = new Scanner(System.in);
+//				
+//				System.out.println("Digite a mensagem");
+//				String msg = scan.next();
 				
-				System.out.println("Digite a mensagem");
-				String msg = scan.next();
-				
-				dOut.writeUTF(msg);
+				dOut.writeUTF("ok");
 
 				dOut.flush();
 				dOut.close();

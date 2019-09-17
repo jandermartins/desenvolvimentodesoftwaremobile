@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button button;
     TextView textView;
+    String response = "";
+    String mensagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,22 +42,36 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            Socket socket = new Socket("10.5.30.68", 5560);
+                            Socket socket = new Socket("192.168.0.114", 50000);
 
                             DataInputStream dIn = new DataInputStream(socket.getInputStream());
                             DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
 
                             dOut.writeUTF(editText.getText().toString());
 
-                            String mensagem = dIn.readUTF();
+                            mensagem = dIn.readUTF();
 
-                            textView.setText(mensagem.toString());
+                            if(mensagem.equals("OK 1")){
+                                response = "Você mandou 1";
+                            }else if(mensagem.equals("OK 2")){
+                                response = "Você mandou 2";
+                            }else if(mensagem.equals("Ok 3")){
+                                response = "Você mandou 3";
+                            }
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    editText.setText(response);
+                                }
+                            });
+
 
                             dIn.close();
                             dOut.close();
                             socket.close();
 
-                        }catch (IOException e){
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
