@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -88,6 +91,16 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(nome);
             if (nome != null) {
                 p.hide();
+                try {
+                    JSONArray jsonArray = new JSONArray(nome);
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        lineAdapter
+
+                    }
+                }catch ()
+
+
+
                 Toast.makeText(MainActivity.this, nome, Toast.LENGTH_SHORT).show();
             } else {
                 p.show();

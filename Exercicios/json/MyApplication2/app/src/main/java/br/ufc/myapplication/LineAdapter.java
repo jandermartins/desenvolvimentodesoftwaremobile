@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class LineAdapter extends RecyclerView.Adapter<LineHolder> {
 
-    private final List<UserModel> mUsers;
+    private final List<String> mUsers;
 
     public LineAdapter(ArrayList users) {
         mUsers = users;
@@ -25,8 +25,8 @@ public class LineAdapter extends RecyclerView.Adapter<LineHolder> {
 
     @Override
     public void onBindViewHolder(LineHolder holder, int position) {
-        holder.title.setText(String.format(Locale.getDefault(), "%s, %d - %s",
-                mUsers.get(position).getName()
+        holder.title.setText(String.format(Locale.getDefault(), "%s",
+                mUsers.get(position)
         ));
     }
 
@@ -54,6 +54,6 @@ public class LineAdapter extends RecyclerView.Adapter<LineHolder> {
         UserModel userModel = mUsers.get(position);
         mUsers.remove(userModel);
         notifyDataSetChanged();
-    }
+
 }
 
