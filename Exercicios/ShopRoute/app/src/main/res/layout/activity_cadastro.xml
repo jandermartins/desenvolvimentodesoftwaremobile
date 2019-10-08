@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".Cadastro">
 
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="236dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eTEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <EditText
+        android:id="@+id/eTPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/eTEmail"
+        app:layout_constraintTop_toBottomOf="@+id/eTEmail" />
+
+    <EditText
+        android:id="@+id/etTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Celular"
+        android:inputType="textPersonName"
+        android:phoneNumber="true"
+        app:layout_constraintStart_toStartOf="@+id/eTPass"
+        app:layout_constraintTop_toBottomOf="@+id/eTPass" />
+
+    <EditText
+        android:id="@+id/etCPf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/etTel"
+        app:layout_constraintTop_toBottomOf="@+id/etTel" />
+
+    <Button
+        android:id="@+id/btCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="59dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Cadastrar"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="@+id/etCPf"
+        app:layout_constraintTop_toBottomOf="@+id/etCPf" />
 </androidx.constraintlayout.widget.ConstraintLayout>
